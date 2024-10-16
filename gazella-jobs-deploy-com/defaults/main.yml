@@ -1,0 +1,23 @@
+---
+
+gazella_mode: 
+gazella_project:                                         # client
+gazella_environment: integration                         #integration, production
+gazella_build_profile_customer: null
+gazella_build_profile_environment: integration
+gazella_build_user: awx-build
+gazella_build_group: "{{ gazella_group_security }}"
+gazella_build_workspace: '/opt/workspace'
+gazella_build_workdir: "{{ gazella_build_workspace }}/{{  gazella_project }}/{{ gazella_project }}-deploy-{{ gazella_environment }}"
+gazella_build_sequence: "{{ gazella_build_workspace }}/{{  gazella_project }}/{{ gazella_project }}-sequence-{{ gazella_environment }}"
+gazella_build_sequence_file: "{{ gazella_build_sequence }}/sequence.ini"
+
+gazella_build_repo_url: git@bitbucket.org:Swissbytes/syscom.git
+gazella_build_repo_branch: QA/COM-v2.13   #QA/COM-v2.13
+gazella_build_repo_filter: COM
+gazella_java_package_version: 'java-8'
+gazella_java_home: '/usr/lib64/jvm/jdk1.8.0_202'
+
+gazella_remote_user: awx-user
+gazella_remote_group: "{{ gazella_group_security }}"
+gazella_remote_workdir: '/opt/.awx/deployments'
